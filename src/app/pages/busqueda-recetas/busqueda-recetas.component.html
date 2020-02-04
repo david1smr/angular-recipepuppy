@@ -1,0 +1,29 @@
+<div class="page-container">
+    <div class="input-busqueda-container" [formGroup]="searchForm">
+
+        <app-input-busqueda [parentFormGroup]="searchForm" (escapePress)="onClearSearch()"></app-input-busqueda>
+    </div>
+
+
+    <div class="recetas-container" [class.hidden]="paginationLocked">
+
+        <ng-container *ngIf="recetaList.length === 0">
+            <div class="empty-receta-list">
+                No se han encontrado recetas
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="recetaList.length > 0">
+            <div class="receta-list">
+                <div *ngFor="let receta of recetaList">
+                    <app-item-receta [receta]="receta"></app-item-receta>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+<div class="loader" [class.hidden]="!paginationLocked">
+    <div class="text">Cargando...</div>
+</div>

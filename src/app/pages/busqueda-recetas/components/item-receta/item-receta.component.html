@@ -1,0 +1,9 @@
+<div class="item-receta" (click)="onOpenExternalLink()">
+    <div *ngIf="receta.thumbnail === ''" class="receta-image">no image</div>
+    <img *ngIf="receta.thumbnail !== ''" class="receta-image" width="72" height=72
+         src="{{ receta.thumbnail }}" />
+    <div class="receta-info">
+        <h4>{{ receta.title }}</h4>
+        <p>{{ receta.ingredients }}</p>
+    </div>
+</div>

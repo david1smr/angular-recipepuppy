@@ -1,0 +1,93 @@
+:host {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.input-busqueda-container {
+    justify-content: center;
+    flex: 0 0 auto;
+    height: 72px;
+    padding: 0 24px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.recetas-container {
+    flex: 1;
+    overflow: auto;
+    padding: 0 24px;
+    opacity: 1;
+    transition: opacity 150ms linear;
+
+    &.hidden {
+        opacity: 0.1;
+    }
+}
+
+.receta-list {
+    grid-gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: auto;
+}
+
+.empty-receta-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 48px 0;
+    font-size: 24px;
+    color: #e4cba4;
+
+    i {
+        font-size: 148px;
+    }
+}
+
+.loader {
+    z-index: 1000;
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1;
+    transition: transform 150ms ease-in-out, opacity 150ms linear, visibility 150ms linear;
+
+    &.hidden {
+        opacity: 0;
+        transform: translate3d(-50%, -40%, 0);
+        transition-delay: 500ms;
+        visibility: hidden;
+    }
+
+    i {
+        font-size: 48px;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+@keyframes jump {
+}

@@ -1,0 +1,6 @@
+<div class="input-busqueda" [formGroup]="parentFormGroup">
+
+    <input type="text" formControlName="textoBusqueda" (keyup.escape)="escapePress.emit()"
+           placeholder="Buscar recetas...">
+
+</div>
